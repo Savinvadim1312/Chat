@@ -29,7 +29,20 @@
     "react-native": "0.64.2",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.8.0",
-    "react-native-web": "0.17.1"
+    "react-native-web": "0.17.1",
+    "stream-chat-expo": "^3.9.0",
+    "@react-native-community/netinfo": "6.0.2",
+    "expo-blur": "~10.0.3",
+    "expo-document-picker": "~10.0.3",
+    "expo-file-system": "~13.0.3",
+    "expo-haptics": "~11.0.3",
+    "expo-image-manipulator": "~10.1.2",
+    "expo-image-picker": "~11.0.3",
+    "expo-media-library": "~13.0.3",
+    "expo-sharing": "~10.0.3",
+    "react-native-gesture-handler": "~1.10.2",
+    "react-native-reanimated": "~2.2.3",
+    "react-native-svg": "12.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
