@@ -1,4 +1,4 @@
-import { useNavigation, useRoute } from "@react-navigation/core";
+import { useRoute } from "@react-navigation/core";
 import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import {
@@ -10,25 +10,20 @@ import {
   Thread,
 } from "stream-chat-react-native-core";
 
-const ChannelScreen = () => {
+const ThreadScreen = () => {
   const [channel, setChannel] = useState(null);
   const route = useRoute();
 
   const { client } = useChatContext();
-  const navigation = useNavigation();
 
-  const { channelId } = route.params || {};
+  const { channelId, thread } = route.params || {};
 
   useEffect(() => {
     const fetchChannel = async () => {
       setChannel(null);
-      console.log("fetching channel", channelId);
       const channels = await client.queryChannels({ id: { $eq: channelId } });
       if (channels.length > 0) {
-        console.log("updating channel state");
         setChannel(channels[0]);
-      } else {
-        console.log("No channels found");
       }
     };
 
@@ -40,18 +35,10 @@ const ChannelScreen = () => {
   }
 
   return (
-    <Channel channel={channel}>
-      <MessageList
-        onThreadSelect={(thread) =>
-          navigation.navigate("Thread", {
-            channelId: channelId,
-            thread,
-          })
-        }
-      />
-      <MessageInput />
+    <Channel channel={channel} thread={thread}>
+      <Thread />
     </Channel>
   );
 };
 
-export default ChannelScreen;
+export default ThreadScreen;

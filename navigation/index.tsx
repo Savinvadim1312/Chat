@@ -18,6 +18,7 @@ import Colors from "../constants/Colors";
 import AuthContext from "../contexts/Authentication";
 import useColorScheme from "../hooks/useColorScheme";
 import ChannelScreen from "../screens/ChannelScreen";
+import ThreadScreen from "../screens/ThreadScreen";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import SignupScreen from "../screens/SignupScreen";
@@ -73,6 +74,11 @@ function RootNavigator() {
             name="Channel"
             component={ChannelScreen}
             options={{ headerTitle: "Channel" }}
+          />
+          <Stack.Screen
+            name="Thread"
+            component={ThreadScreen}
+            options={{ headerTitle: "Thread" }}
           />
           <Stack.Screen
             name="NotFound"
